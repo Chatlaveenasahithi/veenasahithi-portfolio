@@ -1,0 +1,12 @@
+<section class="experience">
+  <h2>Experience</h2>
+  <div class="experience-list">
+    <div class="experience-card" *ngFor="let exp of experiences" tabindex="0">
+      <h3>{{ exp.role }} - {{ exp.company }}</h3>
+      <p class="date">{{ exp.duration }} | {{ exp.location }}</p>
+      <ul>
+        <li *ngFor="let point of exp.responsibilities">{{ point }}</li>
+      </ul>
+    </div>
+  </div>
+</section>

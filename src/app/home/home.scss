@@ -1,0 +1,119 @@
+@keyframes float {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}
+
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4rem 2rem;
+  gap: 2rem;
+  color: var(--text-color);
+
+  .hero-content {
+    flex: 1 1 400px;
+    max-width: 600px;
+
+    .hero-name {
+      font-size: 3rem;
+      font-weight: 900;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+    }
+
+    .hero-tagline {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      line-height: 1.4;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+
+      .btn {
+        padding: 0.75rem 1.8rem;
+        font-weight: 600;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &.btn-primary {
+          background-color: var(--primary-color);
+          color: white;
+
+          &:hover {
+            background-color: var(--primary-color-dark);
+          }
+        }
+
+        &.btn-secondary {
+          background-color: transparent;
+          border: 2px solid var(--primary-color);
+          color: var(--primary-color);
+
+          &:hover {
+            background-color: var(--primary-color);
+            color: white;
+          }
+        }
+      }
+    }
+  }
+
+  .hero-photo {
+    flex: 0 0 360px;                // Wider container for bigger image
+    display: flex;
+    justify-content: flex-start;    // Shift image to the left
+    align-items: center;
+
+    img {
+      width: 320px;                 // Larger image width
+      height: 320px;
+      border-radius: 50%;
+      border: 6px solid var(--primary-color);
+      object-fit: cover;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      animation: float 6s ease-in-out infinite;
+      margin-left: -40px;           // Pull image slightly more to left
+      box-shadow: 0 0 10px rgba(0, 188, 212, 0.2); // subtle glow
+
+      &:hover {
+        transform: scale(1.05) rotateY(3deg);
+        box-shadow: 0 0 25px var(--primary-color);
+      }
+    }
+  }
+}
+
+/* Responsive for mobile */
+@media (max-width: 700px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+
+    .hero-photo {
+      justify-content: center;
+
+      img {
+        width: 220px;             // Bigger image on mobile than before
+        height: 220px;
+        margin-left: 0;           // Reset left margin on small screens
+      }
+    }
+
+    .hero-buttons {
+      justify-content: center;
+    }
+  }
+}

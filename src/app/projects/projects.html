@@ -1,0 +1,11 @@
+<section class="projects">
+  <h2>My Projects</h2>
+  <div class="project-list">
+    <div class="project-card" *ngFor="let project of projects">
+      <h3>{{ project.title }}</h3>
+      <p><strong>Tech Stack:</strong> {{ project.techStack }}</p>
+      <p>{{ project.description }}</p>
+      <a [href]="project.link" target="_blank" rel="noopener noreferrer" class="btn btn-primary">View Project</a>
+    </div>
+  </div>
+</section>

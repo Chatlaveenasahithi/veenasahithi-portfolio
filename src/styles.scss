@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --primary-color: #00bcd4;
+  --primary-color-dark: #009bb3;
+  --text-color: #222;
+}
+
+
+
+.dark-theme {
+  --bg-color: #121212;
+  --text-color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: all 0.3s ease;
+}
